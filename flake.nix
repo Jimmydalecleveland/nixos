@@ -1,18 +1,34 @@
 {
   description = "NixOS Dev Machine";
 
+  # Most of the following config defaults come from the docs here:
+  # nix-community.github.io/home-manager/index.xhtml#sec-flakes-nixos-module
+  # (the Flakes -> NixOS module section)
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        # Import configuration file
-        ./configuration.nix
-      ];
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+    nixosConfigurations = {
+      # Example shows `hostname` but I'm using the default `sudo nix-rebuild switch` command
+      # which appears to use the default `nixos` from the install
+      nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+	  home-manager.nixosModules.home-manager
+	  {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.jimmyc = ./home.nix;
+	    
+	    # Optionally, use home-manager.extraSpecialArgs to pass
+	    # arguments to home.nix
+	  }
+        ];
+      };
     };
-
   };
 }

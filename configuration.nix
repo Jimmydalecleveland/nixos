@@ -106,7 +106,6 @@
     git
     discord
     kanata
-    wl-clipboard # Wayland specific xclip (needed for nvim use system clipboard)
     ripgrep
     bat
   ];

@@ -10,11 +10,17 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
     extraConfig = ''
       " Currently not working, as :checkhealth shows "Warning no clipboard tool found" even though we have wl-copy/wl-paste present
       set clipboard=unnamedplus
     '';
   };
 
-  home.packages = [ pkgs.httpie pkgs.wl-clipboard ];
+  home.packages = [
+    pkgs.httpie 
+    pkgs.wl-clipboard # Wayland specific xclip (needed for nvim use system clipboard)
+  ];
 }

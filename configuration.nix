@@ -95,18 +95,6 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  # Install neovim
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    configure = {
-      options = {
-        # Currently not working, as :checkhealth shows "Warning no clipboard tool found" even though we have wl-copy/wl-paste present
-        clipboard = "unnamedplus";
-      };
-    };
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

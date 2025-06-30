@@ -95,8 +95,15 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Hyprland
+  programs.hyprland.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Desktop portals (screen sharing, link opening, file opening)
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -108,6 +115,12 @@
     kanata
     ripgrep
     bat
+    waybar
+    dunst
+    libnotify # required for dunst
+    swww # wallpaper daemon (hyprpaper, swaybg, wpaperd, mpvpaper are other options)
+    kitty # hyprland's default terminal
+    rofi-wayland # app launcher
   ];
 
   # Kanata

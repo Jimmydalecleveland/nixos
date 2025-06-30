@@ -98,6 +98,13 @@
   # Hyprland
   programs.hyprland.enable = true;
 
+  # Fonts
+  fonts.packages = with pkgs; [
+    font-awesome
+    # nerdfonts isn't working for me yet
+    # nerdfonts.droid-sans-mono
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

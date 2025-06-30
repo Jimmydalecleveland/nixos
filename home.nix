@@ -6,6 +6,13 @@
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 
+  # Git
+  programs.git = {
+    enable = true;
+    userName = "Jimmy Cleveland";
+    userEmail = "jimmydalecleveland@gmail.com";
+  };
+
   # Setup and install Neovim
   programs.neovim = {
     enable = true;

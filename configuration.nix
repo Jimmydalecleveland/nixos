@@ -130,8 +130,7 @@
     dunst
     libnotify # required for dunst
     swww # wallpaper daemon (hyprpaper, swaybg, wpaperd, mpvpaper are other options)
-    kitty # hyprland's default terminal
-    rofi-wayland # app launcher
+    tree # list file trees easily (very popular package for all systems)
   ];
 
   # Kanata

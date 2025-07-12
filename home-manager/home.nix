@@ -30,6 +30,17 @@
     '';
   };
 
+  programs.kitty.enable = true;
+  # programs.rofi.enable = true; # this won't work unless you only install rofi
+  programs.rofi = {
+    enable = true;
+    package = pkgs.rofi-wayland;
+
+    extraConfig = {
+      modi = "drun";
+    };
+  };
+
   home.packages = with pkgs; [
     httpie 
     wl-clipboard # Wayland specific xclip (needed for nvim use system clipboard)

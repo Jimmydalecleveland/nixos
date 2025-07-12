@@ -48,17 +48,6 @@
   # Backup (Stylix required this for overwriting home files)
   home-manager.backupFileExtension = "backup";
 
-  # Stylix
-  stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-  stylix.image = pkgs.fetchurl {
-    url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
-    hash = "sha256-enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
-  };
-  # This is used if you don't set the base16Scheme and it is using genetic algorithm
-  # For the colorscheme, but you want to skew it toward dark or light
-  # stylix.polarity = "dark";
-
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;

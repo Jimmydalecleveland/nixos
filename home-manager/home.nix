@@ -6,7 +6,9 @@
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 
-
+  imports = [
+    ./theme.nix
+  ];
 
   # Git
   programs.git = {
@@ -28,8 +30,10 @@
     '';
   };
 
-  home.packages = [
-    pkgs.httpie 
-    pkgs.wl-clipboard # Wayland specific xclip (needed for nvim use system clipboard)
+  home.packages = with pkgs; [
+    httpie 
+    wl-clipboard # Wayland specific xclip (needed for nvim use system clipboard)
+    kitty
+    rofi-wayland
   ];
 }

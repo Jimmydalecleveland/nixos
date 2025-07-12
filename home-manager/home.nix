@@ -41,6 +41,8 @@
     };
   };
 
+  programs.waybar.enable = true;
+
   home.packages = with pkgs; [
     httpie 
     wl-clipboard # Wayland specific xclip (needed for nvim use system clipboard)

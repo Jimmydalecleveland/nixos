@@ -6,6 +6,8 @@
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 
+
+
   # Git
   programs.git = {
     enable = true;

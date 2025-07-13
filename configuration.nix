@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -132,6 +132,7 @@
     dunst
     libnotify # required for dunst
     swww # wallpaper daemon (hyprpaper, swaybg, wpaperd, mpvpaper are other options)
+    inputs.swww.packages.${pkgs.system}.swww
     tree # list file trees easily (very popular package for all systems)
   ];
 

@@ -16,6 +16,10 @@
       url = "github:danth/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Wallpapers
+    swww.url = "github:LGFae/swww";
+
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, stylix, ... }: {
@@ -24,6 +28,7 @@
       # which appears to use the default `nixos` from the install
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = { inherit inputs; };
         modules = [
 	  # stylix.nixosModules.stylix # testing without this due to conflicts with home-manager
           ./configuration.nix

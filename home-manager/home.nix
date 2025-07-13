@@ -8,6 +8,7 @@
 
   imports = [
     ./theme.nix
+    ./rofi.nix
   ];
 
   # Git
@@ -30,14 +31,10 @@
     '';
   };
 
-  programs.kitty.enable = true;
-  # programs.rofi.enable = true; # this won't work unless you only install rofi
-  programs.rofi = {
+  programs.kitty = {
     enable = true;
-    package = pkgs.rofi-wayland;
-
-    extraConfig = {
-      modi = "drun";
+    settings = {
+      window_paddig_width = 10;
     };
   };
 

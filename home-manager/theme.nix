@@ -8,6 +8,12 @@
       url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
       hash = "sha256-enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
     };
+
+    opacity = {
+      terminal = 0.9;
+      applications = 0.9;
+      popups = 0.95;
+    };
   };
 
   stylix.targets.kitty.enable = true;

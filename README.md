@@ -1,6 +1,9 @@
 # NixOS Configuration
 
 ## Resources
+### NixOS Configurations
+[Collection](https://nixos.wiki/wiki/Configuration_Collection)
+
 ### Theming
 [Rose Pine Kitty](https://github.com/rose-pine/kitty)
 [Rose Pine Rofi](https://github.com/rose-pine/rofi)

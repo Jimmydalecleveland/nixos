@@ -104,8 +104,7 @@
   # Fonts
   fonts.packages = with pkgs; [
     font-awesome
-    # nerdfonts isn't working for me yet
-    # nerdfonts.droid-sans-mono
+    nerd-fonts.jetbrains-mono
   ];
 
   # Allow unfree packages
@@ -134,6 +133,8 @@
     swww # wallpaper daemon (hyprpaper, swaybg, wpaperd, mpvpaper are other options)
     inputs.swww.packages.${pkgs.system}.swww
     tree # list file trees easily (very popular package for all systems)
+    spotify
+    playerctl
   ];
 
   # Kanata

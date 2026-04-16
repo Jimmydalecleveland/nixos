@@ -9,6 +9,7 @@
   imports = [
     ./theme.nix
     ./rofi.nix
+    ./waybar.nix
   ];
 
   # Git

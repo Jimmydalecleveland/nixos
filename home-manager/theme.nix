@@ -18,6 +18,7 @@
 
   stylix.targets.kitty.enable = true;
   stylix.targets.rofi.enable = true;
+  stylix.targets.waybar.enable = false;
   # This is used if you don't set the base16Scheme and it is using genetic algorithm
   # For the colorscheme, but you want to skew it toward dark or light
   # stylix.polarity = "dark";

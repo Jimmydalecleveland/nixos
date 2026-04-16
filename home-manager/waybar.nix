@@ -11,6 +11,7 @@
         height = 40;
         reload_style_on_change = true;
         swap-icon-label = false;
+        output = "HDMI-A-1";
 
         modules-left   = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "clock" ];

@@ -31,6 +31,7 @@
     '';
   };
 
+  # Terminal
   programs.kitty = {
     enable = true;
     settings = {
@@ -38,6 +39,7 @@
     };
   };
 
+  # Topbar
   programs.waybar.enable = true;
 
   home.packages = with pkgs; [

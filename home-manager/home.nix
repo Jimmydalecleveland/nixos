@@ -14,8 +14,10 @@
   # Git
   programs.git = {
     enable = true;
-    userName = "Jimmy Cleveland";
-    userEmail = "jimmydalecleveland@gmail.com";
+    settings.user = {
+      name = "Jimmy Cleveland";
+      email = "jimmydalecleveland@gmail.com";
+    };
   };
 
   # Setup and install Neovim
@@ -42,10 +44,14 @@
   # Topbar
   programs.waybar.enable = true;
 
+  # Hyprland config managed as a raw file for now.
+  # See TODO.md for migrating to the proper wayland.windowManager.hyprland HM module.
+  # Note: monitor names (HDMI-A-1, DP-2) are hardware-specific — update if on new hardware.
+  xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
+
   home.packages = with pkgs; [
     httpie 
     wl-clipboard # Wayland specific xclip (needed for nvim use system clipboard)
     kitty
-    rofi-wayland
   ];
 }

@@ -3,6 +3,8 @@
 Flake-based NixOS config for a personal dev machine. Clone to `~/nixos-config/` and run
 `sudo nixos-rebuild switch` to apply.
 
+See [TODO.md](TODO.md) for known improvements and migration tasks.
+
 ## Quick Start (new machine)
 
 ```bash
@@ -25,6 +27,9 @@ sudo nixos-rebuild switch
 sudo nixos-rebuild switch
 
 # Test config without making it the default boot entry
+# Note: 'test' DOES apply the config immediately to the running system,
+# it just won't persist as the default after a reboot. Run 'switch' after
+# confirming it works to make it permanent.
 sudo nixos-rebuild test
 
 # Build but don't switch (dry run)
